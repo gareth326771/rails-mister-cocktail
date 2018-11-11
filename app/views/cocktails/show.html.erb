@@ -1,13 +1,24 @@
-<h1><%= @cocktail.name %></h1>
-
-<div class="list">
-<% @cocktail.doses.each do |dose| %>
-<p><%= dose.description %></p>
-<p><%= dose.ingredient.name %></p>
-<%= link_to "delete", cocktail_dose_path(@cocktail, dose), method: :delete %>
-<%#= link_to "Delete Dose", cocktail_dose_path(@cocktail, dose), method: :destroy %>
-<% end %><br>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/09/30/10/cocktails.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5');">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+    <p>Check Out The Recipe Below!</p>
+  </div>
 </div>
 
-<%= link_to "Add A Dose", new_cocktail_dose_path(@cocktail, @dose) %>
+<div class="list">
+<ul>
+<% @cocktail.doses.each do |dose| %>
+<li>
+  <%= image_tag("shaker-new-new.png", alt: "logo") %>
+  <h3><%= dose.description %> <%= dose.ingredient.name %></h3>
+  <p><%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete %></p>
+</li>
+<% end %>
+</ul>
+</div>
+
+<div class="add-back">
+<p><%= link_to "Add A Dose", new_cocktail_dose_path(@cocktail, @dose) %></p> <br>
+<p><%= link_to "Back To All Cocktails", cocktails_path %></p>
+</div>
 

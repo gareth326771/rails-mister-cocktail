@@ -8,10 +8,14 @@
 Ingredient.destroy_all
 Cocktail.destroy_all
 
-Cocktail.create(name: "Cocktail 1")
-Cocktail.create(name: "Cocktail 2")
-Cocktail.create(name: "Cocktail 3")
+Cocktail.create(name: "Long Island Iced Tea")
+Cocktail.create(name: "Mojito")
+Cocktail.create(name: "Cosmo")
+Cocktail.create(name: "White Russian")
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+Ingredient.create(name: "Orange Juice")
+Ingredient.create(name: "Crushed Ice")
+Ingredient.create(name: "Mint Leaves")
+Ingredient.create(name: "Vodka")
+Ingredient.create(name: "Rum")
+Ingredient.create(name: "Tequila")
